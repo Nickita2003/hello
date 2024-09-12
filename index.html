@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Библиотека</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<header>
+  <center>
+  <img src="https://avatars.mds.yandex.net/i?id=e63b0176dca73b78d11b59b194dd20cace0d37326c7d627d-10928745-images-thumbs&n=13" weight="100px", height="200px">
+<img src="https://shkolainternatvalujskaya-r31.gosweb.gosuslugi.ru/netcat_files/45/253/76ca56253145cafbd3f3300cb6efe256.jpg"weight="100px", height="200px">
+<img src="https://avatars.mds.yandex.net/i?id=3d9841874d6d49d04481ee48482a602d339a3ecd-13280697-images-thumbs&n=13"weight="100px", height="200px">
+</center>
+</header>
+<body>
+  <div class="container">
+    <h1>Библиотека</h1>
+    <div class="add-book-form">
+      <h2>Добавить книгу</h2>
+      <form>
+        <label for="title">Название:</label>
+        <br><input type="text" id="title" name="title" required><br>
+        <label for="author">Автор:</label>
+        <br><input type="text" id="author" name="author" required><br>
+        <label for="year">Год издания:</label>
+        <br><input type="number" id="year" name="year" required><br>
+        <label for="genre">Жанр:</label>
+        <br><input type="text" id="genre" name="genre" required><br>
+        <label for="status">Статус:</label>
+        <select id="status" name="status">
+          <option value="прочитано">Прочитано</option>
+          <option value="не прочитано">Не прочитано</option>
+        </select><br><br>
+
+        <button type="button" onclick="addBook()">Добавить</button>
+      </form>
+    </div>
+
+    <div class="filter-options">
+      <label for="status-filter">Статус:</label>
+      <select id="status-filter" onchange="filterBooks()">
+        <option value="">Все</option>
+        <option value="прочитано">Прочитано</option>
+        <option value="не прочитано">Не прочитано</option>
+      </select>
+    </div>
+
+    <table id="book-list">
+      <thead>
+        <tr>
+          <th>Название</th>
+          <th>Автор</th>
+          <th>Год</th>
+          <th>Жанр</th>
+          <th>Статус</th>
+          <th>Действия</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <p>Всего книг: <span id="book-count"></span></p>
+
+    <button onclick="refreshList()">Обновить</button>
+    <button onclick="deleteAllBooks()">Удалить все</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
